@@ -5,3 +5,4 @@ WORKDIR /app
 ADD ./ /app/
 RUN pip install pipenv \
     && pipenv install --system --deploy --ignore-pipfile
+CMD ["python", "/app/server.py"]

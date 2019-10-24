@@ -18,7 +18,5 @@ spec:
         - name: demo
           image: {IMAGE}
           imagePullPolicy: Always
-          command: ["/bin/sh"]
-          args: ["python server.py"]
           ports:
             - containerPort: 5000
