@@ -48,7 +48,7 @@ pipeline {
                     kubectl config set-credentials jenkins --token $KUBE_TOKEN
                     kubectl config set-context default --cluster=k8s --user=jenkins
                     kubectl config use-context default
-                    sed -i "s~{IMAGE}~$ECR_REPO~g" `pwd`/demo.yaml
+                    sed -i "s~{IMAGE}~$ECR_REPO:v$BUILD_NUMBER~g" `pwd`/demo.yaml
                     kubectl apply -f `pwd`/demo.yaml
                     '''
                 }
